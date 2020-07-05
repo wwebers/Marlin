@@ -229,7 +229,7 @@ G29_TYPE GcodeSuite::G29() {
     #endif
 
     #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
-
+      int constexpr abl_points = GRID_MAX_POINTS;
       ABL_VAR float zoffset;
 
     #elif ENABLED(AUTO_BED_LEVELING_LINEAR)
