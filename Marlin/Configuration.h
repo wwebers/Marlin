@@ -532,9 +532,9 @@
   //#define DEFAULT_Kd 440
   
   // Hypercube
-  #define DEFAULT_Kp 18.85
-  #define DEFAULT_Ki 1.03
-  #define DEFAULT_Kd 85.96
+  #define DEFAULT_Kp 36.67
+  #define DEFAULT_Ki 2.31
+  #define DEFAULT_Kd 145.35
 #endif // PIDTEMP
 
 //===========================================================================
@@ -578,9 +578,9 @@
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
   // Hypercube
-  #define DEFAULT_bedKp 111.37
-  #define DEFAULT_bedKi 11.22
-  #define DEFAULT_bedKd 737.24
+  #define DEFAULT_bedKp 140.83
+  #define DEFAULT_bedKi 16.72
+  #define DEFAULT_bedKd 790.87
 #endif // PIDTEMPBED
 
 //===========================================================================
