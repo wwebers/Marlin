@@ -1182,7 +1182,7 @@
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
-  #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
+  #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
   //#define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
 
@@ -2254,18 +2254,28 @@
 //
 // ADS7843/XPT2046 ADC Touchscreen such as ILI9341 2.8
 //
-//#define TOUCH_SCREEN
+#define TOUCH_SCREEN
 #if ENABLED(TOUCH_SCREEN)
   #define BUTTON_DELAY_EDIT  50 // (ms) Button repeat delay for edit screens
   #define BUTTON_DELAY_MENU 250 // (ms) Button repeat delay for menus
 
   #define TOUCH_SCREEN_CALIBRATION
 
-  //#define XPT2046_X_CALIBRATION 12316
-  //#define XPT2046_Y_CALIBRATION -8981
-  //#define XPT2046_X_OFFSET        -43
-  //#define XPT2046_Y_OFFSET        257
+  #define XPT2046_X_CALIBRATION -12316
+  #define XPT2046_Y_CALIBRATION   8981
+  #define XPT2046_X_OFFSET         340
+  #define XPT2046_Y_OFFSET         -20
 #endif
+
+// Change colors
+// some colors are predefined, see /src/lcd/dogm/u8g_dev_tft_480~.cpp Line 160
+// or use 16bit color (e.g. 0x0000 = black, 0xFFE0 = yellow)
+// see https://ee-programming-notepad.blogspot.com/2016/10/16-bit-color-generator-picker.html
+#define TFT_MARLINUI_COLOR COLOR_WHITE  // main foreground color
+#define TFT_MARLINBG_COLOR COLOR_BLACK  // background color
+#define TFT_BTCANCEL_COLOR COLOR_RED    // cancel button
+#define TFT_BTARROWS_COLOR COLOR_WHITE  // arrows up/down
+#define TFT_BTOKMENU_COLOR COLOR_GREEN  // enter button
 
 //
 // RepRapWorld REPRAPWORLD_KEYPAD v1.1
