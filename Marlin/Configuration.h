@@ -499,9 +499,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    #define DEFAULT_Kp  14.25
+    #define DEFAULT_Ki   0.85
+    #define DEFAULT_Kd 60
   #endif
 #endif // PIDTEMP
 
@@ -522,7 +522,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -540,9 +540,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 10.00
-  #define DEFAULT_bedKi .023
-  #define DEFAULT_bedKd 305.4
+  #define DEFAULT_bedKp 175.51
+  #define DEFAULT_bedKi 25.75
+  #define DEFAULT_bedKd 797.57
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -2223,6 +2223,19 @@
  *   Interface:  TFT_INTERFACE_FSMC or TFT_INTERFACE_SPI
  */
 #define TFT_TRONXY_X5SA
+#if ENABLED(TFT_GENERIC)
+  // :[ 'AUTO', 'ST7735', 'ST7789', 'ST7796', 'R61505', 'ILI9328', 'ILI9341', 'ILI9488' ]
+  #define TFT_DRIVER AUTO
+
+  // Interface. Enable one of the following options:
+  #define TFT_INTERFACE_FSMC
+  //#define TFT_INTERFACE_SPI
+
+  // TFT Resolution. Enable one of the following options:
+  #define TFT_RES_320x240
+  //#define TFT_RES_480x272
+  //#define TFT_RES_480x320
+#endif
 
 /**
  * TFT UI - User Interface Selection. Enable one of the following options:
@@ -2267,10 +2280,11 @@
 
   #define TOUCH_SCREEN_CALIBRATION
 
-  #define XPT2046_X_CALIBRATION -12316
-  #define XPT2046_Y_CALIBRATION   8981
-  #define XPT2046_X_OFFSET         340
-  #define XPT2046_Y_OFFSET         -20
+  #define TOUCH_CALIBRATION_X -17864
+  #define TOUCH_CALIBRATION_Y  11728
+  #define TOUCH_OFFSET_X         511
+  #define TOUCH_OFFSET_Y         -21
+  #define TOUCH_ORIENTATION TOUCH_LANDSCAPE
 #endif
 
 // Change colors
