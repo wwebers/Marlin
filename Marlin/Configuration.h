@@ -510,9 +510,10 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    // Hypercube
+    #define DEFAULT_Kp 33.00
+    #define DEFAULT_Ki 1.98
+    #define DEFAULT_Kd 137.37
   #endif
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
